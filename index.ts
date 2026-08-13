@@ -50,7 +50,7 @@ async function run(cmd: string, args: string[], cwd?: string): Promise<RunResult
 }
 
 async function sg(args: string[], cwd?: string) {
-  let result = await run("sg", args, cwd);
+  let result = await run("ast-grep", args, cwd);
   if (result.code === 127) {
     result = await run("npx", ["--yes", "@ast-grep/cli", ...args], cwd);
   }
